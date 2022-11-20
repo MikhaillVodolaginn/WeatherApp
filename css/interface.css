@@ -1,0 +1,33 @@
+.interface {
+    display: flex;
+    flex-direction: column;
+}
+
+.interface__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.interface__wrapper {
+    width: 425px;
+}
+
+.interface__input {
+    font-size: 16px;
+    height: 30px;
+    width: 160px;
+    padding: 8px;
+    border-bottom: 2px solid;
+    border-radius: 20px;
+    border-color: rgb(25, 65, 227);
+}
+
+.interface__input::placeholder {
+    color: rgb(25, 65, 227);
+}
+
+.interface__inputs {
+    display: flex;
+    justify-content: space-between;
+}

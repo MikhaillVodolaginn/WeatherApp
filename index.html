@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section class="interface">
+        <div class="container">
+            <form id="form" class="interface__form">
+                <div class="interface__wrapper">
+                    <p>Введите координаты.</p>
+                    <p>Введенные вами данные должны быть числами!</p>
+                    <p id="error"></p>
+                    <div class="interface__inputs">
+                        <input id="lat" class="interface__input" type="text" autocomplete="off" placeholder="Широта">
+                        <input id="lon" class="interface__input" type="text" autocomplete="off" placeholder="Долгота">
+                    </div>
+                </div>
+                <button class="interface__check-weather" type="submit">Узнать погоду</button>
+                <button id="delete" class="interface__delete-widgets">Очистить все</button>
+            </form>
+        </div>
+    </section>
+    <section class="widgets">
+        <div class="container">
+            <ul id="list" class="widgets__list"></ul>
+        </div>
+    </section>
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>
