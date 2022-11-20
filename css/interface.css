@@ -15,9 +15,11 @@
 
 .interface__input {
     font-size: 16px;
+    
     height: 30px;
     width: 160px;
     padding: 8px;
+    
     border-bottom: 2px solid;
     border-radius: 20px;
     border-color: rgb(25, 65, 227);
