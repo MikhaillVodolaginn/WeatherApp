@@ -8,7 +8,9 @@
 body {
     font-family: Monaco, sans-serif;
     font-weight: 600;
+    
     background: #FFF;
+    
     padding: 0;
     margin: 0 auto;
     border: none;
@@ -46,9 +48,12 @@ button {
     width: 425px;
     font-size: 32px;
     font-weight: 500;
+    
     margin-top: 24px;
     padding: 15px;
     border-radius: 30px;
+    border: none;
+    
     color: #FFF;
     background-color: rgba(25, 65, 227, 0.8);
 }
