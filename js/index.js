@@ -1,8 +1,8 @@
 const list = document.getElementById('list');
 const message = document.getElementById('error');
-const form = document.getElementById('form');
 const lat = document.getElementById('lat');
 const lon = document.getElementById('lon');
+const check = document.getElementById('check')
 const del = document.getElementById('delete');
 
 async function GetApi(lat, lon) {
@@ -11,7 +11,7 @@ async function GetApi(lat, lon) {
 }
 
 function createWidgets() {
-    form.addEventListener('submit', eventListener => {
+    check.addEventListener('click', eventListener => {
         eventListener.preventDefault()
         GetApi(lat, lon)
             .then(currentWeather => {
@@ -43,7 +43,9 @@ function createWidget(currentWeather) {
             <p class="widgets__item">Давление: ${currentWeather.main.pressure} ГП</p>
         </div>
         <div class="widgets__map-wrapper">
-            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10" target="_blank"><img class="widgets__map" src=${map} alt="Интерактивная Карта"></a>
+            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10" target="_blank">
+                <img class="widgets__map" src=${map} alt="Интерактивная Карта">
+            </a>
         </div>`;
     list.appendChild(widget);
     localStorage.setItem("list", JSON.stringify(list.innerHTML));
@@ -52,22 +54,13 @@ function createWidget(currentWeather) {
 function deleteWidgets() {
     del.addEventListener('click', () => {
         list.innerHTML = '';
-        lat.value = '';
-        lon.value = '';
         localStorage.clear();
     });
-}
-
-function checkLocalStorage() {
-    if (list.innerHTML === "") {
-        list.innerHTML = JSON.parse(localStorage.getItem(JSON.stringify(list)));
-    }
 }
 
 function app() {
     createWidgets();
     deleteWidgets();
-    checkLocalStorage();
 }
 
 app();
