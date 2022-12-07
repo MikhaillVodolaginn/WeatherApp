@@ -34,7 +34,7 @@ function createWidget(currentWeather) {
         <div class="widgets__head">
             <h1 class="widgets__name">${currentWeather.name}</h1>
             <h2>${Math.floor(currentWeather.main.temp)}°</h2>
-            <img src=${icon} alt="Иконка">
+            <img src=${icon} alt="Иконка текущей погоды">
             <h2 class="widgets__description">${currentWeather.weather[0].description}</h2>
         </div>
         <div class="widgets__info">
@@ -43,7 +43,7 @@ function createWidget(currentWeather) {
             <p class="widgets__item">Давление: ${currentWeather.main.pressure} ГП</p>
         </div>
         <div class="widgets__map-wrapper">
-            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10" target="_blank"><img class="widgets__map" src=${map} alt="Карта"></a>
+            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10" target="_blank"><img class="widgets__map" src=${map} alt="Интерактивная Карта"></a>
         </div>`;
     list.appendChild(widget);
     localStorage.setItem("list", JSON.stringify(list.innerHTML));
