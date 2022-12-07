@@ -31,7 +31,7 @@ function createWidget(currentWeather) {
     let widget = document.createElement("li");
     widget.classList.add("widgets__widget");
     widget.innerHTML = `
-        <div class="widgets__head">
+        <div class="widgets__title">
             <h1 class="widgets__name">${currentWeather.name}</h1>
             <h2>${Math.floor(currentWeather.main.temp)}°</h2>
             <img src=${icon} alt="Иконка">
@@ -43,7 +43,7 @@ function createWidget(currentWeather) {
             <p class="widgets__item">Давление: ${currentWeather.main.pressure} ГП</p>
         </div>
         <div class="widgets__map-wrapper">
-            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10"><img class="widgets__map" src=${map} alt="Карта"></a>
+            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10" target="_blank"><img class="widgets__map" src=${map} alt="Карта"></a>
         </div>`;
     list.appendChild(widget);
     localStorage.setItem("list", JSON.stringify(list.innerHTML));
@@ -58,9 +58,16 @@ function deleteWidgets() {
     });
 }
 
+function checkLocalStorage() {
+    if (list.innerHTML === "") {
+        list.innerHTML = JSON.parse(localStorage.getItem("list", JSON.stringify(list)));
+    }
+}
+
 function app() {
     createWidgets();
     deleteWidgets();
+    checkLocalStorage();
 }
 
 app();
