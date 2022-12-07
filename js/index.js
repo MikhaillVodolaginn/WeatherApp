@@ -27,7 +27,7 @@ function createWidgets() {
 
 function createWidget(currentWeather) {
     let icon = `https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`;
-    let map = `https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=400&height=400&center=lonlat:${currentWeather.coord.lon},${currentWeather.coord.lat}&zoom=10&marker=lonlat:${currentWeather.coord.lon},${currentWeather.coord.lat};color:%23ff0000;size:medium&apiKey=7b128cd8393743309d239f6e08f5fa23`;
+    let map = `https://static-maps.yandex.ru/1.x/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&size=400,400&z=10&l=map&pt=37.620070,55.753630,comma`
     let widget = document.createElement("li");
     widget.classList.add("widgets__widget");
     widget.innerHTML = `
