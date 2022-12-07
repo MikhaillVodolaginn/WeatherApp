@@ -60,7 +60,7 @@ function deleteWidgets() {
 
 function checkLocalStorage() {
     if (list.innerHTML === "") {
-        list.innerHTML = JSON.parse(localStorage.getItem("list", JSON.stringify(list)));
+        list.innerHTML = JSON.parse(localStorage.getItem(JSON.stringify(list)));
     }
 }
 
