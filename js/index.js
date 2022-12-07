@@ -31,7 +31,7 @@ function createWidget(currentWeather) {
     let widget = document.createElement("li");
     widget.classList.add("widgets__widget");
     widget.innerHTML = `
-        <div class="widgets__title">
+        <div class="widgets__head">
             <h1 class="widgets__name">${currentWeather.name}</h1>
             <h2>${Math.floor(currentWeather.main.temp)}°</h2>
             <img src=${icon} alt="Иконка">
