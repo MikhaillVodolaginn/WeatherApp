@@ -32,10 +32,10 @@ function createWidget(currentWeather) {
     widget.classList.add("widgets__widget");
     widget.innerHTML = `
         <div class="widgets__head">
-            <h1 class="widgets__name">${currentWeather.name}</h1>
+            <h1>${currentWeather.name}</h1>
             <h2>${Math.floor(currentWeather.main.temp)}°</h2>
             <img src=${icon} alt="Иконка текущей погоды">
-            <h2 class="widgets__description">${currentWeather.weather[0].description}</h2>
+            <h2>${currentWeather.weather[0].description}</h2>
         </div>
         <div class="widgets__info">
             <p class="widgets__item">Скорость ветра: ${currentWeather.wind.speed.toFixed(0)} м/c</p>
