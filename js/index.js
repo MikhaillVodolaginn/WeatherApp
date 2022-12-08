@@ -27,7 +27,7 @@ function createWidgets() {
 
 function createWidget(currentWeather) {
     let icon = `https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`;
-    let map = `https://static-maps.yandex.ru/1.x/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&size=400,400&z=10&l=map&pt=37.620070,55.753630,comma`
+    let map = `https://static-maps.yandex.ru/1.x/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&size=400,400&z=10&l=map&pt=${currentWeather.coord.lon},${currentWeather.coord.lat},comma`
     let widget = document.createElement("li");
     widget.classList.add("widgets__widget");
     widget.innerHTML = `
@@ -43,7 +43,7 @@ function createWidget(currentWeather) {
             <p class="widgets__item">Давление: ${currentWeather.main.pressure} ГП</p>
         </div>
         <div class="widgets__map-wrapper">
-            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10" target="_blank">
+            <a href="https://maps.yandex.ru/?ll=${currentWeather.coord.lon},${currentWeather.coord.lat}&z=10&pt=${currentWeather.coord.lon},${currentWeather.coord.lat},comma" target="_blank">
                 <img class="widgets__map" src=${map} alt="Интерактивная Карта">
             </a>
         </div>`;
